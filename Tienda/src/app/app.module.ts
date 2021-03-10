@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductComponent } from './components/product/product.component';
 import { BusquedaComponent } from './components/busqueda/busqueda.component';
 import { TarjetaProductosComponent } from './components/tarjeta-productos/tarjeta-productos.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { TarjetaProductosComponent } from './components/tarjeta-productos/tarjet
     MarcasComponent,
     ProductComponent,
     BusquedaComponent,
-    TarjetaProductosComponent
+    TarjetaProductosComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
