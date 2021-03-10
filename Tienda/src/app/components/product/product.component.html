@@ -1,0 +1,21 @@
+<div class="animated fadeIn fast">
+    <h1>{{producto.nombre}} <small>{{producto.precio | currency}}</small></h1>
+
+    <hr>
+
+    <div class="row">
+        <div class="col-md-4">
+            <img src="{{producto.imgSrc}}" class="img-fluid">
+            <br><br>
+            <a [routerLink]="['/products']" class="btn btn-outline-danger btn-block">Regresar</a>
+        </div>
+        <div class="col-md-8">
+            <h1>{{producto.nombre}}</h1>
+            <hr>
+            <p>
+                {{producto.descripcion}}
+            </p>
+            <span>{{producto.precio | currency}}</span>
+        </div>
+    </div>
+</div>

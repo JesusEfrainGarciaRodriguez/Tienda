@@ -1,0 +1,14 @@
+<h1 class="animated fadeIn fast">Buscando: <small>{{busqueda}}</small></h1>
+<hr>
+
+<div class="animated fadeIn fast" *ngIf="ListProductos.length==0">
+    <div class="col-md-12">
+        <div class="alert alert-primary" role="alert">
+            No existen resultados para la busqueda: {{busqueda}}
+        </div>
+    </div>
+</div>
+
+<div class="card-columns animated fadeIn fast">
+    <app-tarjeta-productos [producto]="producto" *ngFor="let producto of ListProductos"></app-tarjeta-productos>
+</div>

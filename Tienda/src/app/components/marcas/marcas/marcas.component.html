@@ -1,0 +1,13 @@
+<div class="container">
+    <h1 class="animated fadeIn fast">Marcas</h1>
+    <hr>
+    <div class="card-columns animated fadeIn fast">
+        <div class="card" *ngFor="let marca of ListMarcas">
+            <img src="{{marca.imgSrc}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{marca.nombre}}</h5>
+                <button class="btn btn-outline-success btn-block">Ver más...</button>
+            </div>
+        </div>
+    </div>
+</div>

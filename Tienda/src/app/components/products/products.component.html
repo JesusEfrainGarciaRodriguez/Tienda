@@ -1,0 +1,6 @@
+<h1 class="animated fadeIn fast">Productos</h1>
+<hr>
+<div class="card-columns animated fadeIn fast">
+    <!-- *ngFor="let producto of ListProductos" -->
+    <app-tarjeta-productos [producto]="producto" *ngFor="let producto of ListProductos"></app-tarjeta-productos>
+</div>

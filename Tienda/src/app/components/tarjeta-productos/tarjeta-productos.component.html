@@ -1,0 +1,16 @@
+<div class="card" >
+    <img class="card-img-top" src="{{producto.imgSrc}}" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">{{producto.nombre}}</h5>
+        <p class="card-text text-truncate">{{producto.descripcion}}</p>
+        <p class="card-text"><small class="text-muted">{{producto.precio | currency}}</small></p>
+
+        <button type="button" (click)="verProducto(producto.id)" class="btn btn-outline-success btn-block">
+            Ver más...
+        </button>
+
+        <!--<a [routerLink]="['/product',producto.id]" class="btn btn-outline-success btn-block"> 
+            Ver más...
+        </a>-->
+    </div>
+</div>
