@@ -11,18 +11,18 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><img src="/assets/img/person.svg" height="20" width="20"></span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Usuario" aria-label="Usuario"  required>
+                    <input type="text" name="usuario" [(ngModel)]="usuario" class="form-control" placeholder="Usuario" aria-label="Usuario" required>
                 </div>
 
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                       <span class="input-group-text"><img src="/assets/img/key.svg" height="20" width="20"></span>
                     </div>
-                    <input type="password" class="form-control" placeholder="Constraseña" aria-label="Constraseña" required>
+                    <input type="password" name="password" [(ngModel)]="password" class="form-control" placeholder="Constraseña" aria-label="Constraseña" required>
                 </div>
                 
 
-                <button type="submit" class="btn btn-success btn-block mb-3">Enviar</button>
+                <button type="button" class="btn btn-success btn-block mb-3" (click)="ingresar()">Enviar</button>
 
                 <hr class="bg-white">
 
@@ -35,3 +35,4 @@
         </div>
     </div>
 </div>
+
