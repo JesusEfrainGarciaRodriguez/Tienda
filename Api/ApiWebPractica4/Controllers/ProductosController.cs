@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ApiWebPractica4.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -10,6 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ApiWebPractica4.Controllers
 {
+	//[Authorize]
 	[Route("api/[controller]")]
 	[ApiController]
 	public class ProductosController : ControllerBase

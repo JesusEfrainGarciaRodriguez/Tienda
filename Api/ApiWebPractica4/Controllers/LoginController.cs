@@ -1,5 +1,4 @@
 ﻿using ApiWebPractica4.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -10,10 +9,29 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
+// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
 namespace ApiWebPractica4.Controllers
 {
-    public class LoginController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class LoginController : ControllerBase
     {
+        // GET: api/<LoginController>
+        [HttpGet]
+        public IEnumerable<string> Get()
+        {
+            return new string[] { "value1", "value2" };
+        }
+
+        // GET api/<LoginController>/5
+        [HttpGet("{id}", Name = "GetLogin")]
+        public string GetLogin(int id)
+        {
+            return "value";
+        }
+
+        // POST api/<LoginController>
         [HttpPost]
         public IActionResult Post([FromBody] Usuarios value)
         {
@@ -26,7 +44,7 @@ namespace ApiWebPractica4.Controllers
                 if (usuario == null)
                     throw new Exception("Usuario o contraseña incorrectos");
 
-                var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("upsin2020"));
+                var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("KeyForSignInUpsin@2020"));
                 var signinCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
 
                 List<Claim> LstClaim = new List<Claim>
@@ -53,79 +71,16 @@ namespace ApiWebPractica4.Controllers
             }
         }
 
-        // GET: LoginController
-        public ActionResult Index()
+        // PUT api/<LoginController>/5
+        [HttpPut("{id}")]
+        public void Put(int id, [FromBody] string value)
         {
-            return View();
         }
 
-        // GET: LoginController/Details/5
-        public ActionResult Details(int id)
+        // DELETE api/<LoginController>/5
+        [HttpDelete("{id}")]
+        public void Delete(int id)
         {
-            return View();
-        }
-
-        // GET: LoginController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: LoginController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: LoginController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: LoginController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: LoginController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: LoginController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
         }
     }
 }

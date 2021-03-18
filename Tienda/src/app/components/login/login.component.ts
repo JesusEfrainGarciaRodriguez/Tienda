@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+//Servicios
+import { LoginService } from 'src/app/servicios/login.service';
+//Extras
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-login',
@@ -6,17 +10,39 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  usuario:string = "";
-  password:string = "";
+  //Variables
+  login = {
+    usuario : null,
+    password : null
+  }
 
-  constructor() { }
+  //Base
+  constructor( private loginService: LoginService ) { }
 
   ngOnInit(): void {
   }
 
-  ingresar() {
-    console.log(this.usuario);
-    console.log(this.password);
+  //Funciones
+  async ingresar() {
+    console.log(this.login.usuario);
+    console.log(this.login.password);
+
+    try {
+      
+      let response = await this.loginService.login(this.login).toPromise();
+      console.table(response);
+
+    } catch (error) {
+
+      Swal.fire({
+        title: 'Error!',
+        text: error.error,
+        icon: 'error',
+        confirmButtonText: 'Aceptar'
+      })
+
+    }
+
   }
 
 }

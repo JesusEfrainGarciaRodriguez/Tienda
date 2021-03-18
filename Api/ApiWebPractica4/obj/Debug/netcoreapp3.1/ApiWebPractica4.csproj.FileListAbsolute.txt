@@ -120,3 +120,10 @@ C:\Users\efrai\Desktop\GitHub\Tienda\Api\ApiWebPractica4\obj\Debug\netcoreapp3.1
 C:\Users\efrai\Desktop\GitHub\Tienda\Api\ApiWebPractica4\obj\Debug\netcoreapp3.1\ApiWebPractica4.dll
 C:\Users\efrai\Desktop\GitHub\Tienda\Api\ApiWebPractica4\obj\Debug\netcoreapp3.1\ApiWebPractica4.pdb
 C:\Users\efrai\Desktop\GitHub\Tienda\Api\ApiWebPractica4\obj\Debug\netcoreapp3.1\ApiWebPractica4.genruntimeconfig.cache
+C:\Users\efrai\Desktop\GitHub\Tienda\Api\ApiWebPractica4\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\efrai\Desktop\GitHub\Tienda\Api\ApiWebPractica4\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\efrai\Desktop\GitHub\Tienda\Api\ApiWebPractica4\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\efrai\Desktop\GitHub\Tienda\Api\ApiWebPractica4\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\efrai\Desktop\GitHub\Tienda\Api\ApiWebPractica4\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\efrai\Desktop\GitHub\Tienda\Api\ApiWebPractica4\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\efrai\Desktop\GitHub\Tienda\Api\ApiWebPractica4\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
