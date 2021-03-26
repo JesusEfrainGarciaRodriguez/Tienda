@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
     try {
       
       let response = await this.loginService.login(this.login).toPromise();
+      this.loginService.sesionIniciada = true;
       console.table(response);
 
     } catch (error) {

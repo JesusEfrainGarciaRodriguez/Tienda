@@ -25,6 +25,8 @@
         <div class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="text" placeholder="Buscar producto" aria-label="Search" #txtBuscarProducto (keyup.enter)="buscarProducto(txtBuscarProducto.value)">
             <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="buscarProducto(txtBuscarProducto.value)">Buscar</button>
+            <button [routerLink]="['login']" *ngIf="!loginService.sesionIniciada" class="btn btn-outline-success my-2 my-sm-0 ml-1" type="button">Login</button>
+            <button *ngIf="loginService.sesionIniciada" (click)="salir()" class="btn btn-outline-success my-2 my-sm-0 ml-1" type="button">Salir</button>
         </div>
     </div>
 </nav>
