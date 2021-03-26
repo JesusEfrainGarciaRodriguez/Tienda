@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 //Servicios
 import { LoginService } from 'src/app/servicios/login.service';
 //Extras
@@ -17,7 +18,10 @@ export class LoginComponent implements OnInit {
   }
 
   //Base
-  constructor( private loginService: LoginService ) { }
+  constructor( 
+    private loginService: LoginService ,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
@@ -32,6 +36,7 @@ export class LoginComponent implements OnInit {
       let response = await this.loginService.login(this.login).toPromise();
       this.loginService.sesionIniciada = true;
       console.table(response);
+      this.router.navigate(['alta-productos']);
 
     } catch (error) {
 

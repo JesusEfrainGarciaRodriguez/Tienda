@@ -11,7 +11,10 @@ import { LoginService } from 'src/app/servicios/login.service';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private router: Router, public loginService: LoginService) { }
+  constructor(
+    private router: Router, 
+    public loginService: LoginService
+  ) { }
 
   ngOnInit(): void {
   }
@@ -22,5 +25,6 @@ export class NavbarComponent implements OnInit {
 
   salir(){
     this.loginService.sesionIniciada = false;
+    this.router.navigate(['login']);
   }
 }

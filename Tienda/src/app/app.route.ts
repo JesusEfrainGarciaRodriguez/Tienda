@@ -8,6 +8,10 @@ import { MarcasComponent } from './components/marcas/marcas/marcas.component';
 import { ProductComponent } from './components/product/product.component';
 import { ProductsComponent } from './components/products/products.component';
 import { AboutComponent } from './components/about/about.component';
+import { AltaproductosComponent } from './components/altaproductos/altaproductos.component';
+
+//Servicios
+import { AuthGuard } from './servicios/auth.guard';
 
 const app_routes : Routes = [
     { path:'home',component: HomeComponent },
@@ -17,6 +21,7 @@ const app_routes : Routes = [
     { path: 'product/:id',component: ProductComponent },
     { path: 'buscar/:texto',component: BusquedaComponent },
     { path: 'login',component: LoginComponent },
+    { path: 'alta-productos',component: AltaproductosComponent, canActivate: [AuthGuard] },
     { path:'**',pathMatch: 'full', redirectTo:'home'}
 ]
 

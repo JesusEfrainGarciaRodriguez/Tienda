@@ -18,6 +18,9 @@
             <li class="nav-item" [routerLinkActive]="['active']">
                 <a class="nav-link" [routerLink]="['marcas']">Marcas</a>
             </li>
+            <li class="nav-item" [routerLinkActive]="['active']" *ngIf="loginService.sesionIniciada">
+                <a class="nav-link" [routerLink]="['alta-productos']">Alta productos</a>
+            </li>
             <li class="nav-item" [routerLinkActive]="['active']">
                 <a class="nav-link" [routerLink]="['about']">Acerca de</a>
             </li>
