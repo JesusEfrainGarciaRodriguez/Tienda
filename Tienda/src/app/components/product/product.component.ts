@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductosService } from 'src/app/servicios/productos.service';
@@ -9,11 +10,11 @@ import { ProductosService } from 'src/app/servicios/productos.service';
 })
 export class ProductComponent implements OnInit {
   producto: any = {};  
-  constructor(private activateRoute: ActivatedRoute,
-              private productosService: ProductosService) {
-
-    
-  }
+  constructor(
+    private activateRoute: ActivatedRoute,
+    private productosService: ProductosService,
+    private location: Location  
+  ) {}
 
   ngOnInit(): void {
     //Obtengo el id de la url
@@ -26,6 +27,10 @@ export class ProductComponent implements OnInit {
         console.log(this.producto);
       })
     });
+  }
+
+  backPage() {
+    this.location.back();
   }
 
 }

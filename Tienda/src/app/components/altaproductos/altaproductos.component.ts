@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 //Servicios
 import { ProductosService } from 'src/app/servicios/productos.service';
@@ -11,10 +13,19 @@ import { ProductosService } from 'src/app/servicios/productos.service';
 export class AltaproductosComponent implements OnInit {
 
   lstProductos: any = [];
+  frmItem: FormGroup;
 
   constructor(
-    private productosServices: ProductosService
-  ) { }
+    private productosServices: ProductosService,
+    private router: Router,
+    private formbuilder: FormBuilder
+  ) { 
+    this.frmItem = formbuilder.group({
+      Nombre: ['', Validators.compose([Validators.required])],
+      Precio: [0, Validators.compose([Validators.required])],
+      Descripcion: ['', Validators.compose([Validators.required])]
+    });
+  }
 
   ngOnInit(): void {
     this.productosServices.get().subscribe(
@@ -22,8 +33,8 @@ export class AltaproductosComponent implements OnInit {
     );
   }
 
-  verProducto( item:any ){
-    console.log(item);
+  verProducto( productoId:any ){
+    this.router.navigate(['/product',productoId]);
   }
 
   modificarProducto( item:any ){
@@ -34,4 +45,7 @@ export class AltaproductosComponent implements OnInit {
     console.log(item);
   }
 
+  guardarProducto() {
+    console.log(this.frmItem.value);
+  }
 }
